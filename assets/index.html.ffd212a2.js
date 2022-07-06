@@ -1,0 +1,1 @@
+const e={key:"v-743dca3c",path:"/SSL/",title:"Renewing SSL certificate",lang:"en-US",frontmatter:{sidebar:"auto"},excerpt:"",headers:[{level:2,title:"Manual renew",slug:"manual-renew",children:[]}],git:{},filePathRelative:"SSL/readme.md"};export{e as data};

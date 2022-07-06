@@ -1,0 +1,1 @@
+import{_ as o,o as n,c as r,a as e,t as a,F as l}from"./app.e309fa3f.js";const c={data(){return{test:1}}};function i(p,t,u,_,s,d){return n(),r(l,null,[e("h1",null,a(s.test),1),e("button",{onClick:t[0]||(t[0]=f=>this.test++)},"Add 1")],64)}var $=o(c,[["render",i],["__file","Demo.vue"]]);export{$ as default};

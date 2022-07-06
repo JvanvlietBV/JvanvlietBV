@@ -1,0 +1,1 @@
+const e={key:"v-6388dc20",path:"/Website/frontend/",title:"Front-End",lang:"en-US",frontmatter:{sidebar:"auto",pageClass:"custom-page-class"},excerpt:"",headers:[{level:2,title:"Directory Structure",slug:"directory-structure",children:[]},{level:2,title:"Default layout",slug:"default-layout",children:[]}],git:{},filePathRelative:"Website/frontend/readme.md"};export{e as data};

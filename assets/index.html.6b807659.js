@@ -1,0 +1,24 @@
+import{_ as t,r as o,o as i,c as l,a as e,b as a,F as c,d as n,e as r}from"./app.e309fa3f.js";const d={},p=e("h1",{id:"renewing-ssl-certificate",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#renewing-ssl-certificate","aria-hidden":"true"},"#"),n(" Renewing SSL certificate")],-1),u=n("We use "),h={href:"https://certbot.eff.org",target:"_blank",rel:"noopener noreferrer"},b=n("certbot"),m=n(" to create and renew our SSL certificates."),g=r(`<h2 id="manual-renew" tabindex="-1"><a class="header-anchor" href="#manual-renew" aria-hidden="true">#</a> Manual renew</h2><p>To manually renew the SSL certificate for both the website and link, use the command below.</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token function">sudo</span> certbot certonly --manual --preferred-challenges dns
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>Next you will be asked which domains to renew if the certificates are due to renewal. When asked, input:</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>*.jvanvliet.com
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>You&#39;ll be asked if you&#39;re OK with your IP being logged. You need to answer this with Yes <code>Y</code></p><p>Finally, you&#39;ll be asked to deploy a dns acme challenge.</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>Please deploy a DNS TXT record under the name
+_acme-challenge.jvanvliet.com with the following value:
+
+example-example-example-example
+
+Before continuing, verify the record is deployed.
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div>`,8),v=n("Go to the "),f={href:"https://businessconnect.nl/",target:"_blank",rel:"noopener noreferrer"},_=n("businessconnect"),k=n(" 'klantenportal' and login. There, under Diensten you can find jvanvliet.com and manage the DNS records."),w=e("p",null,"Find the existing _acmechallenge record and change it's value to the value you're being given by the certbot.",-1),y=n("Once saved, make sure the dns record is propagates by using a tool like "),x={href:"https://dnschecker.org/",target:"_blank",rel:"noopener noreferrer"},S=n("dnschecker.org"),N=r(`<p>Press enter to continue. If the DNS record was propagated this should be the expected outcome:</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>Press Enter to Continue
+Waiting <span class="token keyword">for</span> verification<span class="token punctuation">..</span>.
+Cleaning up challenges
+
+IMPORTANT NOTES:
+ - Congratulations<span class="token operator">!</span> Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/jvanvliet.com/fullchain.pem
+   Your key <span class="token function">file</span> has been saved at:
+   /etc/letsencrypt/live/jvanvliet.com/privkey.pem
+   Your cert will expire on <span class="token number">2022</span>-10-03. To obtain a new or tweaked
+   version of this certificate <span class="token keyword">in</span> the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   <span class="token string">&quot;certbot renew&quot;</span>
+ - If you like Certbot, please consider supporting our work by:
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>Once done, reload apache2 to use the renewed SSL certificate.</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token function">sudo</span> systemctl restart apache2
+</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br></div></div><p>SSL certificates are valid for 3 months, meaning this has to be done every 3 months.</p>`,5);function T(L,Y){const s=o("ExternalLinkIcon");return i(),l(c,null,[p,e("p",null,[u,e("a",h,[b,a(s)]),m]),g,e("p",null,[v,e("a",f,[_,a(s)]),k]),w,e("p",null,[y,e("a",x,[S,a(s)])]),N],64)}var j=t(d,[["render",T],["__file","index.html.vue"]]);export{j as default};
